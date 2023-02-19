@@ -1,24 +1,29 @@
-import {cn} from 'shared/lib/classNames';
-import cls from './AppLink.module.scss'
-import {FC, PropsWithChildren} from 'react';
-import {Link, LinkProps} from 'react-router-dom';
-import {ValueOf} from 'shared/lib/utilityTypes';
-
+import { cn } from "shared/lib/classNames";
+import cls from "./AppLink.module.scss";
+import { FC, PropsWithChildren } from "react";
+import { Link, LinkProps } from "react-router-dom";
+import { ValueOf } from "shared/lib/utilityTypes";
 
 export const AppLinkTheme = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary'
-}
+  PRIMARY: "primary",
+  SECONDARY: "secondary",
+};
 
-export type AppLinkTheme = ValueOf<typeof AppLinkTheme>
+export type AppLinkTheme = ValueOf<typeof AppLinkTheme>;
 
 interface AppLinkProps extends LinkProps {
-  className?: string
+  className?: string;
   theme?: AppLinkTheme;
 }
 
 export const AppLink: FC<PropsWithChildren<AppLinkProps>> = (props) => {
-  const {to, className, children, theme = AppLinkTheme.PRIMARY, ...restProps} = props
+  const {
+    to,
+    className,
+    children,
+    theme = AppLinkTheme.PRIMARY,
+    ...restProps
+  } = props;
   return (
     <Link
       to={to}
@@ -29,4 +34,3 @@ export const AppLink: FC<PropsWithChildren<AppLinkProps>> = (props) => {
     </Link>
   );
 };
-
