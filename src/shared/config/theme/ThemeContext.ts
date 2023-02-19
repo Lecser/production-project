@@ -1,9 +1,9 @@
-import { createContext, Dispatch, SetStateAction } from "react";
-import { ValueOf } from "shared/lib/utilityTypes";
+import { createContext, type Dispatch, type SetStateAction } from 'react';
+import { type ValueOf } from 'shared/lib/utilityTypes';
 
 export const Theme = {
-  LIGHT: "light",
-  DARK: "dark",
+  LIGHT: 'light',
+  DARK: 'dark'
 } as const;
 
 export type Theme = ValueOf<typeof Theme>;
@@ -15,4 +15,4 @@ export interface ThemeContextProps {
 
 export const ThemeContext = createContext<ThemeContextProps>({});
 
-export const LOCAL_STORAGE_THEME_KEY = "theme";
+export const LOCAL_STORAGE_THEME_KEY = 'theme';

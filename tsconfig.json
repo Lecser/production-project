@@ -6,10 +6,12 @@
     "target": "es5",
     "jsx": "react-jsx",
     "allowJs": true,
+    "types": [
+      "@types/node"
+    ],
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
     "paths": {
       "*": [
         "./src/*"
@@ -20,5 +22,6 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": ["**/*.ts", "**/*.tsx",".eslintrc.js"]
 }
