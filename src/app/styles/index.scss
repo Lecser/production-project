@@ -2,8 +2,11 @@
 @import "./variables/global";
 @import "./themes/normal";
 @import "./themes/dark";
-@import './reset';
 
+
+* {
+  box-sizing: border-box
+}
 
 .app {
   font: var(--font-m);
