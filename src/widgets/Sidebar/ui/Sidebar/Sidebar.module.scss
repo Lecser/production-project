@@ -1,7 +1,11 @@
 .sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   height: calc(100vh - var(--navbar-height));
   width: var(--sidebar-width);
-  background: var(--inverted-bg-color);
+  background: var(--bg-content-color);
   position: relative;
   transition: width 0.2s;
 }
@@ -12,12 +16,13 @@
 
 .switchers {
   display: flex;
+  align-items: center;
   justify-content: center;
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
-.lang {
-  margin-left: 20px;
+.theme {
+  display: flex;
+  margin-right: 5px;
 }

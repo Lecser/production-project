@@ -1,5 +1,9 @@
 {
-  "Тестовый перевод": "Test example",
   "Перевод": "Translate",
-  "Язык": "English"
+  "Язык": "English",
+  "Страница не найдена": "Page not found",
+  "Главная": "Main",
+  "О сайте": "About us",
+  "Что-то пошло не так": "Something went wrong \uD83D\uDE15",
+  "Обновить страницу": "Reload page"
 }

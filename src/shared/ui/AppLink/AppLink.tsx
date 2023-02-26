@@ -1,11 +1,12 @@
 import { type FC, type PropsWithChildren } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
-import { cn } from 'shared/lib/classNames';
+import { cn } from 'shared/lib/classNames/classNames';
 import { type ValueOf } from 'shared/lib/utilityTypes';
 
 import cls from './AppLink.module.scss';
 
 export const AppLinkTheme = {
+  SUBHEAD: 'appLink',
   PRIMARY: 'primary',
   SECONDARY: 'secondary'
 };

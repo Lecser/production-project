@@ -1,6 +1,6 @@
 import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import { type FC, useState } from 'react';
-import { cn } from 'shared/lib/classNames';
+import { cn } from 'shared/lib/classNames/classNames';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 
 import cls from './Sidebar.module.scss';
@@ -17,12 +17,13 @@ export const Sidebar: FC<SidebarProps> = (props) => {
   };
 
   return (
-    <div className={cn(cls.sidebar, { [cls.collapsed]: collapsed }, [className as string])}>
+    <aside className={cn(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
+      {/* eslint-disable-next-line i18next/no-literal-string */}
       <button onClick={onToggle}>toggle</button>
       <div className={cls.switchers}>
-        <ThemeSwitcher />
-        <LangSwitcher className={cls.lang} />
+        <ThemeSwitcher className={cls.theme} />
+        <LangSwitcher />
       </div>
-    </div>
+    </aside>
   );
 };

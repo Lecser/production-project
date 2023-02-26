@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes, type FC, type PropsWithChildren } from 'react';
-import { cn } from 'shared/lib/classNames';
+import { cn } from 'shared/lib/classNames/classNames';
 import { type ValueOf } from 'shared/lib/utilityTypes';
 
 import cls from './Button.module.scss';
