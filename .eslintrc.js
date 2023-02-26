@@ -3,7 +3,13 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'airbnb-typescript', 'prettier'],
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'airbnb-typescript',
+    'prettier',
+    'plugin:i18next/recommended'
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: ['./tsconfig.json'],
@@ -13,7 +19,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'simple-import-sort'],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'simple-import-sort', 'i18next'],
   rules: {
     'react/prop-types': 0,
     'react/react-in-jsx-scope': 0,
