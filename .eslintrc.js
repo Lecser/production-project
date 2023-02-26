@@ -1,7 +1,8 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    jest: true
   },
   extends: [
     'plugin:react/recommended',
@@ -43,7 +44,6 @@ module.exports = {
     '@typescript-eslint/no-redeclare': 'warn',
     'import/no-extraneous-dependencies': 'off',
     'no-param-reassign': 0,
-
     'import/order': 0,
     'simple-import-sort/exports': 1,
     'simple-import-sort/imports': [
