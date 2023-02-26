@@ -11,8 +11,7 @@ interface PageErrorProps {
 export const PageError: FC<PageErrorProps> = (props) => {
   const { className } = props;
   const { t } = useTranslation();
-  // eslint-disable-next-line no-restricted-globals
-  const reloadPage = () => location.reload();
+  const reloadPage = () => window.location.reload();
   return (
     <div className={cn(cls.pageError, {}, [className])}>
       <p>{t('Что-то пошло не так')}</p>
