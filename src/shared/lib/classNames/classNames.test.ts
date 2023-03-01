@@ -1,6 +1,4 @@
-import { describe, expect, test } from '@jest/globals';
-
-import { cn } from './classNames';
+import { cn } from 'shared/lib/classNames/classNames';
 
 describe('classNames util func tests', () => {
   test('with only first param', () => {

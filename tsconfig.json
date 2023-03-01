@@ -23,5 +23,5 @@
       "module": "CommonJS"
     }
   },
-  "include": ["**/*.ts", "**/*.tsx",".eslintrc.js"]
+  "include": ["**/*.ts", "**/*.tsx",".eslintrc.js","config/jest/jest-setup.ts"]
 }
