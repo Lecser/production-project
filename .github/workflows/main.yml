@@ -1,0 +1,33 @@
+name: linting, testing, building
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: yarn install
+      - name: build production project
+        run: yarn run build:prod
+      - name: linting typescript
+        run: yarn run lint:ts
+      - name: linting css
+        run: yarn run lint:scss
+      - name: unit testing
+        run: yarn run test:unit
+      - name: build storybook
+        run: yarn run build-storybook
+      - name: screenshot testing
+        run: yarn run test:ui:ci
