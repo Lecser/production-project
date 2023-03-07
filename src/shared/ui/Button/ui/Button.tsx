@@ -5,7 +5,8 @@ import { type ValueOf } from 'shared/lib/utilityTypes';
 import cls from './Button.module.scss';
 
 export const ThemeButton = {
-  CLEAR: 'clear'
+  CLEAR: 'clear',
+  OUTLINE: 'outline'
 };
 
 type ThemeButton = ValueOf<typeof ThemeButton>;
@@ -16,7 +17,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
-  const { theme = ThemeButton.CLEAR, className, children, ...restProps } = props;
+  const { theme, className, children, ...restProps } = props;
   return (
     <button className={cn(cls.button, {}, [className, cls[theme]])} {...restProps}>
       {children}
