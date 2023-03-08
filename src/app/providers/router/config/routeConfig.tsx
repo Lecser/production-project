@@ -2,15 +2,12 @@ import { AboutPage } from 'pages/AboutPage';
 import { MainPage } from 'pages/MainPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { type RouteProps } from 'react-router-dom';
-import { type ValueOf } from 'shared/lib/utilityTypes';
 
-export const AppRoutes = {
-  MAIN: 'main',
-  ABOUT: 'about',
-  NOT_FOUND: 'not_found'
-} as const;
-
-export type AppRoutes = ValueOf<typeof AppRoutes>;
+export enum AppRoutes {
+  MAIN = 'main',
+  ABOUT = 'about',
+  NOT_FOUND = 'not_found'
+}
 
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',

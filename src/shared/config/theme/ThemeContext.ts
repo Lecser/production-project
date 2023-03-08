@@ -1,12 +1,9 @@
 import { createContext, type Dispatch, type SetStateAction } from 'react';
-import { type ValueOf } from 'shared/lib/utilityTypes';
 
-export const Theme = {
-  LIGHT: 'light',
-  DARK: 'dark'
-} as const;
-
-export type Theme = ValueOf<typeof Theme>;
+export enum Theme {
+  LIGHT = 'light',
+  DARK = 'dark'
+}
 
 export interface ThemeContextProps {
   theme?: Theme;

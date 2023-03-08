@@ -10,19 +10,44 @@
   transition: width 0.2s;
 }
 
-.collapsed {
-  width: var(--sidebar-width-collaped);
-}
-
 .switchers {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   margin-bottom: 20px;
-  flex-wrap: wrap;
 }
 
-.theme {
+.items {
+  top: 100px;
+  position: absolute;
+}
+
+.item {
   display: flex;
-  margin-right: 5px;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-left: 8px;
+}
+
+.link {
+  color: var(--primary-color);
+}
+
+.icon {
+  width: 25px;
+  margin-right: 9px;
+  color: var(--primary-color);
+}
+
+.collapsedBtn {
+  color: var(--primary-color);
+}
+
+.collapsed {
+  width: var(--sidebar-width-collaped);
+
+  .link {
+    opacity: 0;
+    width: 0;
+  }
 }
