@@ -22,13 +22,24 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'simple-import-sort', 'i18next'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'prettier',
+    'simple-import-sort',
+    'i18next',
+    'react-hooks'
+  ],
   rules: {
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
     'react/prop-types': 0,
     'react/react-in-jsx-scope': 0,
     '@typescript-eslint/no-shadow': 0,
     '@typescript-eslint/no-unused-vars': 1,
     'consistent-return': 0,
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
     'react/function-component-definition': [
       2,
       {
