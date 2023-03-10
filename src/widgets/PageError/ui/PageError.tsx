@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from 'shared/lib/classNames/classNames';
 
@@ -8,7 +7,7 @@ interface PageErrorProps {
   className?: string;
 }
 
-export const PageError: FC<PageErrorProps> = (props) => {
+export const PageError = (props: PageErrorProps) => {
   const { className } = props;
   const { t } = useTranslation();
   const reloadPage = () => window.location.reload();

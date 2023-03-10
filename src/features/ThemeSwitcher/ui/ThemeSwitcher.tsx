@@ -1,4 +1,3 @@
-import { type FC } from 'react';
 import LightIcon from 'shared/assets/icons/moon-light.svg';
 import DarkIcon from 'shared/assets/icons/moon-night.svg';
 import { Theme } from 'shared/config/theme/ThemeContext';
@@ -12,7 +11,7 @@ interface ThemeSwitcherProps {
   className?: string;
 }
 
-export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
+export const ThemeSwitcher = (props: ThemeSwitcherProps) => {
   const { className } = props;
   const { theme, toggleTheme } = useTheme();
 

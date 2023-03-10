@@ -1,4 +1,3 @@
-import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
@@ -8,7 +7,7 @@ interface LangSwitcherProps {
   short?: boolean;
 }
 
-export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
+export const LangSwitcher = (props: LangSwitcherProps) => {
   const { className, short } = props;
 
   const { t, i18n } = useTranslation();

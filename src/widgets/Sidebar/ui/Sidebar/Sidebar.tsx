@@ -1,6 +1,6 @@
 import { RoutePath } from 'app/providers/router/config/routeConfig';
 import { ThemeSwitcher } from 'features/ThemeSwitcher';
-import { type FC, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import AboutIcon from 'shared/assets/icons/about.svg';
 import BarsIcon from 'shared/assets/icons/bars.svg';
@@ -16,7 +16,7 @@ interface SidebarProps {
   className?: string;
 }
 
-export const Sidebar: FC<SidebarProps> = (props) => {
+export const Sidebar = (props: SidebarProps) => {
   const { className } = props;
   const [collapsed, setCollapsed] = useState(true);
 

@@ -1,7 +1,7 @@
-import { type FC, type PropsWithChildren, useMemo, useState } from 'react';
+import { type PropsWithChildren, useMemo, useState } from 'react';
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from 'shared/config/theme/ThemeContext';
 
-export const ThemeProvider: FC<PropsWithChildren<{}>> = (props) => {
+export const ThemeProvider = (props: PropsWithChildren<{}>) => {
   const { children } = props;
 
   const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.DARK;

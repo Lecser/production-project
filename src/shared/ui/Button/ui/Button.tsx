@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes, type FC, type PropsWithChildren } from 'react';
+import { type ButtonHTMLAttributes, type PropsWithChildren } from 'react';
 import { cn } from 'shared/lib/classNames/classNames';
 
 import cls from './Button.module.scss';
@@ -23,7 +23,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
 }
 
-export const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
+export const Button = (props: PropsWithChildren<ButtonProps>) => {
   const { theme, className, children, square, size = ButtonSize.M, ...restProps } = props;
 
   const mods = { [cls.square]: square };

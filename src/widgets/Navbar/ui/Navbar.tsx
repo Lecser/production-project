@@ -1,4 +1,3 @@
-import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from 'shared/lib/classNames/classNames';
 
@@ -8,7 +7,7 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar: FC<NavbarProps> = (props) => {
+export const Navbar = (props: NavbarProps) => {
   const { className } = props;
   const { t } = useTranslation();
   return (

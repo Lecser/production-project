@@ -1,4 +1,4 @@
-import { type FC, type PropsWithChildren } from 'react';
+import { type PropsWithChildren } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
 import { cn } from 'shared/lib/classNames/classNames';
 
@@ -15,7 +15,7 @@ interface AppLinkProps extends LinkProps {
   theme?: AppLinkTheme;
 }
 
-export const AppLink: FC<PropsWithChildren<AppLinkProps>> = (props) => {
+export const AppLink = (props: PropsWithChildren<AppLinkProps>) => {
   const { to, className, children, theme = AppLinkTheme.PRIMARY, ...restProps } = props;
   return (
     <Link to={to} className={cn(cls.appLink, {}, [className, cls[theme]])} {...restProps}>
