@@ -11,15 +11,14 @@ export default (env: BuildEnv) => {
     src: path.resolve(__dirname, 'src')
   };
   const mode = env.mode || 'development';
-  const PORT = env.port;
-  const { analyze } = env;
+  const { port, analyze } = env;
 
   const isDev = mode === 'development';
 
   return buildWebpackConfig({
     mode,
     paths,
-    port: PORT,
+    port,
     isDev,
     analyze
   });

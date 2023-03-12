@@ -1,5 +1,4 @@
 import { MouseEvent, PropsWithChildren, useCallback, useEffect, useState } from 'react';
-import { useTheme } from 'shared/config/theme/useTheme';
 import { cn } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
 
@@ -15,7 +14,6 @@ export const Modal = (props: PropsWithChildren<ModalProps>) => {
   const { className, children, isOpen, onClose } = props;
 
   const [isClosing, setIsClosing] = useState(false);
-  const { theme } = useTheme();
 
   const closeHandler = useCallback(() => {
     if (onClose) {

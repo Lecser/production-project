@@ -29,14 +29,13 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
     const { children } = this.props;
 
     if (hasError) {
-      // eslint-disable-next-line i18next/no-literal-string
       return (
         <Suspense fallback=''>
           <PageError />
         </Suspense>
       );
     }
-
-    return children;
+    // eslint-disable-next-line react/jsx-no-useless-fragment
+    return <>{children}</>;
   }
 }

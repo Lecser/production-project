@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack, { RuleSetRule } from 'webpack';
 
-import { buildCssLoader } from '../build/loaders/buildCssLoader';
+import { buildCSSLoader } from '../build/loaders/buildCSSLoader';
 import { buildSvgrLoader } from '../build/loaders/buildSvgrLoader';
 import { BuildPaths } from '../build/types/config';
 
@@ -20,6 +20,6 @@ export default ({ config }: { config: webpack.Configuration }) => {
     }
     return rule;
   });
-  config.module.rules.push(buildSvgrLoader(), buildCssLoader(true));
+  config.module.rules.push(buildSvgrLoader(), buildCSSLoader(true));
   return config;
 };
