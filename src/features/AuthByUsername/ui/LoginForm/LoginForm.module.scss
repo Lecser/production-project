@@ -1,0 +1,28 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 275px;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.loginBtn {
+  width: 100%;
+  height: 36px;
+  margin-left: auto;
+}
+
+.loginIcon {
+  width: 55px;
+}
+
+.loginTitle {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}

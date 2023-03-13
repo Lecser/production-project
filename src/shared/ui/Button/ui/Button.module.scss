@@ -1,7 +1,10 @@
 .button {
   cursor: pointer;
   color: var(--primary-color);
-  padding: 5px 15px;
+  background: var(--bg-content-color);
+  border: none;
+  padding: 0 16px;
+  border-radius: 4px;
 }
 
 .clear {

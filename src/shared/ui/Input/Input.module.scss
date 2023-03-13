@@ -1,0 +1,12 @@
+.input {
+  outline: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--snippet-border);
+  background: var(--tint-bg-color);
+  color: var(--primary-color);
+
+  &:focus {
+    border: 1px solid var(--secondary-color);
+  }
+}
