@@ -1,11 +1,4 @@
-import {
-  MouseEvent,
-  PropsWithChildren,
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useState
-} from 'react';
+import { MouseEvent, PropsWithChildren, useCallback, useEffect, useState } from 'react';
 import { cn } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
 
@@ -23,7 +16,6 @@ export const Modal = (props: PropsWithChildren<ModalProps>) => {
 
   const [isClosing, setIsClosing] = useState(false);
   const [isOpening, setIsOpening] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -49,18 +41,6 @@ export const Modal = (props: PropsWithChildren<ModalProps>) => {
 
   useEffect(() => {
     if (isOpen) {
-      setIsMounted(true);
-    }
-
-    return () => {
-      if (isClosing) {
-        setIsMounted(false);
-      }
-    };
-  }, [isClosing, isOpen]);
-
-  useEffect(() => {
-    if (isOpen) {
       setIsOpening(true);
       window.addEventListener('keydown', onKeyDown);
     }
@@ -77,7 +57,7 @@ export const Modal = (props: PropsWithChildren<ModalProps>) => {
     [cls.isClosing]: isClosing
   };
 
-  if (lazy && !isMounted) {
+  if (lazy && !isOpen) {
     return null;
   }
 
