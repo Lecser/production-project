@@ -7,22 +7,32 @@ import { Button, ButtonSize, ButtonTheme } from './Button';
 
 export default {
   title: 'Shared/Button',
-  component: Button,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+  component: Button
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: 'Text'
+  children: 'Button'
+};
+
+export const Filled = Template.bind({});
+Filled.args = {
+  children: 'Button',
+  theme: ButtonTheme.FILLED
+};
+
+export const FilledDisabled = Template.bind({});
+FilledDisabled.args = {
+  children: 'Button',
+  theme: ButtonTheme.FILLED,
+  disabled: true
 };
 
 export const Clear = Template.bind({});
 Clear.args = {
-  children: 'Text',
+  children: 'Button',
   theme: ButtonTheme.CLEAR
 };
 
@@ -66,27 +76,27 @@ BackgroundContentTheme.args = {
 
 export const Outline = Template.bind({});
 Outline.args = {
-  children: 'Text',
+  children: 'Button',
   theme: ButtonTheme.OUTLINE
 };
 
 export const OutlineSizeL = Template.bind({});
 OutlineSizeL.args = {
-  children: 'Text',
+  children: 'Button',
   theme: ButtonTheme.OUTLINE,
   size: ButtonSize.L
 };
 
 export const OutlineSizeXl = Template.bind({});
 OutlineSizeXl.args = {
-  children: 'Text',
+  children: 'Button',
   theme: ButtonTheme.OUTLINE,
   size: ButtonSize.XL
 };
 
 export const OutlineLight = Template.bind({});
 OutlineLight.args = {
-  children: 'Text',
+  children: 'Button',
   theme: ButtonTheme.OUTLINE
 };
 OutlineLight.decorators = [ThemeDecorator(Theme.LIGHT)];

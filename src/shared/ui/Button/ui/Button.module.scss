@@ -20,6 +20,16 @@
   background: none;
 }
 
+.filled {
+  border: 1px solid var(--primary-color);
+  color: var(--inverted-primary-color);
+  background: var(--inverted-bg-color);
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
 .background {
   background: var(--bg-color);
   color: var(--primary-color);
@@ -64,4 +74,8 @@
 
 .size_xl {
   font: var(--font-xl);
+}
+
+:disabled {
+  opacity: 0.5;
 }

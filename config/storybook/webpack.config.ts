@@ -21,5 +21,10 @@ export default ({ config }: { config: webpack.Configuration }) => {
     return rule;
   });
   config.module.rules.push(buildSvgrLoader(), buildCSSLoader(true));
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      IS_DEV: true
+    })
+  );
   return config;
 };

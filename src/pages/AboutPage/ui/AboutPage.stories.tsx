@@ -7,10 +7,7 @@ import AboutPage from './AboutPage';
 
 export default {
   title: 'Pages/AboutPage',
-  component: AboutPage,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+  component: AboutPage
 } as ComponentMeta<typeof AboutPage>;
 
 const Template: ComponentStory<typeof AboutPage> = (args) => <AboutPage />;

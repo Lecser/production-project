@@ -7,8 +7,10 @@
   "Что-то пошло не так": "Something went wrong \uD83D\uDE15",
   "Обновить страницу": "Reload page",
   "Короткий язык": "En",
-  "Войти": "log in",
+  "Войти": "Log in",
   "Имя пользователя": "Username",
   "Пароль": "Password",
-  "Вход в аккаунт": "Log in"
+  "Вход в аккаунт": "Log in",
+  "Неверный email или пароль": "Incorrect email or password.",
+  "Выйти": "Log out"
 }

@@ -8,9 +8,6 @@ import { AppLink, AppLinkTheme } from './AppLink';
 export default {
   title: 'Shared/AppLink',
   component: AppLink,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  },
   args: { to: '/' }
 } as ComponentMeta<typeof AppLink>;
 

@@ -7,10 +7,7 @@ import { Modal } from './Modal';
 
 export default {
   title: 'Shared/Modal',
-  component: Modal,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+  component: Modal
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;

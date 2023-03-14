@@ -6,10 +6,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
   title: 'Pages/NotFoundPage',
-  component: NotFoundPage,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+  component: NotFoundPage
 } as ComponentMeta<typeof NotFoundPage>;
 
 const Template: ComponentStory<typeof NotFoundPage> = (args) => <NotFoundPage />;
