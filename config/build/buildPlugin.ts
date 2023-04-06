@@ -12,7 +12,7 @@ export function buildPlugin({
   isDev,
   analyze
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-  return [
+  const plugins = [
     new HtmlWebpackPlugin({ template: paths.html }),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({
@@ -21,8 +21,13 @@ export function buildPlugin({
     }),
     new webpack.DefinePlugin({
       IS_DEV: JSON.stringify(isDev)
-    }),
-    isDev && new ReactRefreshWebpackPlugin(),
-    analyze && new BundleAnalyzerPlugin({ openAnalyzer: false })
-  ].filter(Boolean);
+    })
+  ];
+
+  if (isDev) plugins.push(new ReactRefreshWebpackPlugin());
+  if (analyze) {
+    // @ts-ignore
+    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
+  }
+  return plugins;
 }

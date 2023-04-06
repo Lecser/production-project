@@ -4,7 +4,7 @@ import { Theme } from 'shared/config/theme/ThemeContext';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { LoginForm } from './LoginForm';
+import LoginForm from './LoginForm';
 
 export default {
   title: 'features/LoginForm',
