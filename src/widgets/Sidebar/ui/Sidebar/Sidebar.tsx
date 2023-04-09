@@ -1,6 +1,6 @@
 import { RoutePath } from 'app/providers/router/config/routeConfig';
 import { ThemeSwitcher } from 'features/ThemeSwitcher';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import AboutIcon from 'shared/assets/icons/about.svg';
 import BarsIcon from 'shared/assets/icons/bars.svg';
@@ -9,6 +9,8 @@ import { cn } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher';
+import { sidebarItemsList } from 'widgets/Sidebar/model/items/items';
+import { SidebarItem } from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
 
 import cls from './Sidebar.module.scss';
 
@@ -16,7 +18,7 @@ interface SidebarProps {
   className?: string;
 }
 
-export const Sidebar = (props: SidebarProps) => {
+export const Sidebar = memo((props: SidebarProps) => {
   const { className } = props;
   const [collapsed, setCollapsed] = useState(true);
 
@@ -41,14 +43,9 @@ export const Sidebar = (props: SidebarProps) => {
       </Button>
 
       <div className={cls.items}>
-        <AppLink theme={AppLinkTheme.SUBHEAD} to={RoutePath.main} className={cls.item}>
-          <HomeIcon className={cls.icon} />
-          <span className={cls.link}> {t('Главная')}</span>
-        </AppLink>
-        <AppLink theme={AppLinkTheme.SUBHEAD} to={RoutePath.about} className={cls.item}>
-          <AboutIcon className={cls.icon} />
-          <span className={cls.link}> {t('О сайте')}</span>
-        </AppLink>
+        {sidebarItemsList.map((item) => (
+          <SidebarItem key={item.path} item={item} collapsed={collapsed} />
+        ))}
       </div>
       <div className={cls.switchers}>
         <ThemeSwitcher className={cls.theme} />
@@ -56,4 +53,4 @@ export const Sidebar = (props: SidebarProps) => {
       </div>
     </aside>
   );
-};
+});

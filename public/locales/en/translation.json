@@ -12,5 +12,7 @@
   "Пароль": "Password",
   "Вход в аккаунт": "Log in",
   "Неверный email или пароль": "Incorrect email or password.",
-  "Выйти": "Log out"
+  "Выйти": "Log out",
+  "ProfilePage": "Profile Page",
+  "Профиль": "Profile"
 }

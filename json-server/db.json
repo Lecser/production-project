@@ -26,6 +26,12 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "first": "alex",
+    "lastname": "ferguson",
+    "age": 22,
+    "currency": "RUB",
+    "country": "Russia",
+    "username": "admin",
+    "avatar": "https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
   }
 }

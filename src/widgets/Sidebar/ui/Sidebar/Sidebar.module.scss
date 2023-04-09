@@ -22,23 +22,6 @@
   position: absolute;
 }
 
-.item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  padding-left: 8px;
-}
-
-.link {
-  color: var(--primary-color);
-}
-
-.icon {
-  width: 25px;
-  margin-right: 9px;
-  color: var(--primary-color);
-}
-
 .collapsedBtn {
   color: var(--primary-color);
 }
