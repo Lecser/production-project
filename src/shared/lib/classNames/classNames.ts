@@ -8,9 +8,9 @@ const classNames = (
   [
     cls,
     ...additional.filter(Boolean),
-    ...Object.entries(mods)
-      .filter(([_, value]) => Boolean(value))
-      .map(([cls]) => cls)
+    ...Object.keys(mods)
+      .filter((key) => Boolean(mods[key]))
+      .map((cls) => cls)
   ].join(' ');
 
 export { classNames as cn };
