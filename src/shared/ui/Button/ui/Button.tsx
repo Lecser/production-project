@@ -25,7 +25,14 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = memo((props: PropsWithChildren<ButtonProps>) => {
-  const { theme, className, children, square, size = ButtonSize.M, ...restProps } = props;
+  const {
+    theme = ButtonTheme.FILLED,
+    className,
+    children,
+    square,
+    size = ButtonSize.M,
+    ...restProps
+  } = props;
 
   const mods = { [cls.square]: square };
 

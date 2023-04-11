@@ -6,7 +6,7 @@
 import path from 'path';
 
 export default {
-  globals: { IS_DEV: true },
+  globals: { IS_DEV: true, API: '' },
   clearMocks: true,
   testEnvironment: 'jsdom',
   coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],

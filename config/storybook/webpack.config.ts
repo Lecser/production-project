@@ -12,18 +12,22 @@ export default ({ config }: { config: webpack.Configuration }) => {
     entry: '',
     src: path.resolve(__dirname, '..', '..', 'src')
   };
-  config.resolve.modules.push(paths.src);
-  config.resolve.extensions.push('.ts', '.tsx');
-  config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
-    if (rule.test instanceof RegExp && rule.test.toString().includes('svg')) {
-      return { ...rule, exclude: /\.svg$/i };
-    }
-    return rule;
-  });
-  config.module.rules.push(buildSvgrLoader(), buildCSSLoader(true));
-  config.plugins.push(
+  if (config.module?.rules) {
+    config.module.rules = config?.module?.rules?.map((rule: RuleSetRule | '...') => {
+      if (rule !== '...' && /svg/.test(rule.test as string)) {
+        return { ...rule, exclude: /\.svg$/i };
+      }
+      return rule;
+    });
+    config.module.rules.push(buildSvgrLoader(), buildCSSLoader(true));
+  }
+  config?.resolve?.modules?.push(paths.src);
+  config?.resolve?.extensions?.push('.ts', '.tsx');
+
+  config?.plugins?.push(
     new webpack.DefinePlugin({
-      IS_DEV: true
+      IS_DEV: JSON.stringify(true),
+      API: JSON.stringify('')
     })
   );
   return config;

@@ -83,5 +83,9 @@ module.exports = {
         ]
       }
     ]
+  },
+  globals: {
+    IS_DEV: true,
+    API: true
   }
 };

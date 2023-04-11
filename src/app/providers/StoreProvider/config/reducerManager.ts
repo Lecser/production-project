@@ -14,12 +14,13 @@ export function createReducerManager(
   return {
     getReducerMap: () => reducers,
 
-    reduce: (state: StateSchema, action: AnyAction) => {
-      if (keysToRemove.length > 0) {
+    reduce: (state: StateSchema | undefined, action: AnyAction) => {
+      if (keysToRemove.length > 0 && state) {
         state = { ...state };
-        keysToRemove.forEach((key) => delete state[key]);
+        keysToRemove.forEach((key) => delete state?.[key]);
         keysToRemove = [];
       }
+
       return combinedReducer(state, action);
     },
 

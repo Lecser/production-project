@@ -1,18 +1,14 @@
-import { RoutePath } from 'app/providers/router/config/routeConfig';
-import { ThemeSwitcher } from 'features/ThemeSwitcher';
-import { memo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import AboutIcon from 'shared/assets/icons/about.svg';
-import BarsIcon from 'shared/assets/icons/bars.svg';
-import HomeIcon from 'shared/assets/icons/home.svg';
-import { cn } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
-import { LangSwitcher } from 'widgets/LangSwitcher';
-import { sidebarItemsList } from 'widgets/Sidebar/model/items/items';
-import { SidebarItem } from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
+import { ThemeSwitcher } from "features/ThemeSwitcher";
+import { memo, useState } from "react";
+import { useTranslation } from "react-i18next";
+import BarsIcon from "shared/assets/icons/bars.svg";
+import { cn } from "shared/lib/classNames/classNames";
+import { Button, ButtonTheme } from "shared/ui/Button/ui/Button";
+import { LangSwitcher } from "widgets/LangSwitcher";
+import { sidebarItemsList } from "widgets/Sidebar/model/items/items";
+import { SidebarItem } from "widgets/Sidebar/ui/SidebarItem/SidebarItem";
 
-import cls from './Sidebar.module.scss';
+import cls from "./Sidebar.module.scss";
 
 interface SidebarProps {
   className?: string;

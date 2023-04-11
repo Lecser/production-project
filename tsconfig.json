@@ -2,10 +2,12 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": true,
+    "removeComments": true,
     "module": "ESNext",
     "target": "es5",
     "jsx": "react-jsx",
     "allowJs": true,
+    "strict": true,
     "types": [
       "@types/node"
     ],

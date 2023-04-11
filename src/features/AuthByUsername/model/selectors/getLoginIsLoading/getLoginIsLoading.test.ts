@@ -5,7 +5,9 @@ import { getLoginIsLoading } from './getLoginIsLoading';
 
 describe('getLoginIsLoadingTest', () => {
   test('should return tru', () => {
-    const state: DeepPartial<StateSchema> = { loginForm: { isLoading: true } };
+    const state: DeepPartial<StateSchema> = {
+      loginForm: { isLoading: true, password: '', username: '', error: 'error' }
+    };
     expect(getLoginIsLoading(state as StateSchema)).toEqual(true);
   });
   test('should work with empty', () => {

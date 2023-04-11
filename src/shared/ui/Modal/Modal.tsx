@@ -34,7 +34,7 @@ export const Modal = (props: PropsWithChildren<ModalProps>) => {
 
   const handleTransition = () => {
     if (isClosing) {
-      onClose();
+      onClose?.();
       setIsClosing(false);
     }
   };
